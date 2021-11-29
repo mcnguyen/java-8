@@ -6,7 +6,8 @@ public class FunctionExample {
 
     static Function<String,String> upperCase =  (name) -> name.toUpperCase();
 
-    static Function<String,String> addSomeString =  (name) -> name.toUpperCase().concat("default");
+    static Function<String,String> addSomeString =  (name) -> name.concat("default");
+//    static Function<String,String> addSomeString =  (name) -> name.toUpperCase().concat("default");
 
     static Function<String,Integer> strLength =  (name) -> name.length();
 
@@ -17,7 +18,7 @@ public class FunctionExample {
 
         System.out.println("Result is : " + upperCase.apply("java8"));
 
-        System.out.println("Result of andthen : " + upperCase.andThen(addSomeString).apply("java8"));
+        System.out.println("Result of andThen : " + upperCase.andThen(addSomeString).apply("java8"));
 
         System.out.println("Result of compose : " + upperCase.compose(addSomeString).apply("java8"));
 

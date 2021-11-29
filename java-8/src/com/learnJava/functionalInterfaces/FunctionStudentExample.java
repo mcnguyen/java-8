@@ -11,23 +11,19 @@ import java.util.function.Predicate;
 
 public class FunctionStudentExample {
 
-    static Function<List<Student>, Map<String, Double>>  function = (students -> {
+    static Function<List<Student>, Map<String, Double>> mapGrade3AndAboveFunction = students -> {
+        Map<String, Double> studentGradeMap = new HashMap<>();
 
-        Map<String,Double> studentGradeMap = new HashMap<>();
-        students.forEach((student -> {
-
-            if(PredicateStudentExample.p1.test(student)){
-                studentGradeMap.put(student.getName(),student.getGpa());
+        students.forEach(student -> {
+            if (PredicateStudentExample.grade3AndAbove.test(student)) {
+                studentGradeMap.put(student.getName(), student.getGpa());
             }
-        }));
+        });
 
         return studentGradeMap;
-
-    });
+    };
 
     public static void main(String[] args) {
-
-        System.out.println(function.apply(StudentDataBase.getAllStudents()));
-
+        System.out.println(mapGrade3AndAboveFunction.apply(StudentDataBase.getAllStudents()));
     }
 }

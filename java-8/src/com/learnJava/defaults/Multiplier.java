@@ -9,15 +9,17 @@ import java.util.List;
  */
 public interface Multiplier {
 
-    int multiply(List<Integer> integerList);
-
-    default int size(List<Integer> integerList){
-        System.out.println("Inside interface");
-        return integerList.size();
+    // can NOT be overwritten
+    static boolean isEmpty(List<Integer> integerList) {
+//        return integerList != null && integerList.size() == 0;
+        return integerList == null || integerList.size() == 0;
     }
 
-    static boolean isEmpty(List<Integer> integerList){
+    int multiply(List<Integer> integerList);
 
-        return integerList!=null && integerList.size()==0;
+    // can be overwritten
+    default int size(List<Integer> integerList) {
+        System.out.println("Inside interface");
+        return integerList.size();
     }
 };

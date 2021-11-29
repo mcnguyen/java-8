@@ -22,8 +22,18 @@ public class ComparatorLambda {
                                         //-1 -> if o1<o2
             }
         };
-
         System.out.println(comparator.compare(1,2));
+
+
+        Comparator<Integer> comparator1 = new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                return o1.compareTo(o2);
+            }
+        };
+        System.out.println(comparator1.compare(3, 2));
+
+
 
         /**
          * In JAVA 8
@@ -32,6 +42,10 @@ public class ComparatorLambda {
         Comparator<Integer> comparatorLambda1 = (a,b) -> a.compareTo(b);
 
         System.out.println(comparatorLambda.compare(1,2));
+
+
+        Comparator<Integer> comparatorLambda2 = (a, b) -> a.compareTo(b);
+        System.out.println(comparatorLambda2.compare(3, 2));
 
 
         /**

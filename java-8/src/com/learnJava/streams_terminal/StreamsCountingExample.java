@@ -10,11 +10,10 @@ public class StreamsCountingExample {
        return  StudentDataBase.getAllStudents()
                 .stream()
                 .filter(student -> student.getGpa()>=3.9)
-                .collect(Collectors.counting());
+                .collect(Collectors.counting()); // .count(); // for replacement
     }
 
     public static void main(String[] args) {
-
         System.out.println(count());
     }
 }

@@ -10,24 +10,29 @@ import static java.util.stream.Collectors.toList;
 public class StreamsOfGenerateIterateExample {
 
     public static void main(String[] args) {
-
         Stream<String> stringStream = Stream.of("adam","dan","jenny","dave");
         stringStream.forEach(System.out::println);
+
+        Stream.iterate(1, x -> x * 2)
+                .limit(10)
+                .forEach(System.out::println);
 
         List<Integer> integerList  = Stream.iterate(1, x->x*2)
                 .limit(10)
                 .map(Integer::new)
                 .collect(toList());
-
         System.out.println("iterate : " + integerList);
 
 
         Supplier<Integer> supplier = new Random()::nextInt;
 
+        Stream.generate(supplier)
+                .limit(10)
+                .forEach(System.out::println);
+
         List<Integer> integerList1  = Stream.generate(supplier)
                 .limit(10)
                 .collect(toList());
         System.out.println("generate : " + integerList1);
-
     }
 }

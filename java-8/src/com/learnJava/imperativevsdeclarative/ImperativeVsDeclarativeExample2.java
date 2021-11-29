@@ -3,6 +3,7 @@ package com.learnJava.imperativevsdeclarative;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+//import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.toList;
 
@@ -27,6 +28,11 @@ public class ImperativeVsDeclarativeExample2 {
         /**
          * Declarative Syle
          */
+
+        List<Integer> uniqList2 = integerList.stream()
+                .distinct()
+                .collect(toList());
+
 
         List<Integer> uniqueList1 = integerList.stream()
                 .distinct()

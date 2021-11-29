@@ -10,7 +10,7 @@ public class Student {
     private double gpa;
     private String gender;
     private int noteBooks;
-    private Optional<Bike> bike;
+    private Optional<Bike> bike = Optional.empty(); // must be initialized with an empty Optional
 
     public Optional<Bike> getBike() {
         return bike;
@@ -21,7 +21,6 @@ public class Student {
     }
 
     public Student(){
-
     }
 
     public Student(String name, int gradeLevel, double gpa, String gender, int noteBooks, List<String> activities) {
@@ -34,7 +33,6 @@ public class Student {
     }
 
     public int getNoteBooks() {
-
         return noteBooks;
     }
 
@@ -97,7 +95,6 @@ public class Student {
     }
 
     public void printListOfActivities(){
-
         System.out.println("List of Activities are : " + this.activities);
     }
 
@@ -111,6 +108,5 @@ public class Student {
                 ", activities=" + activities +
                 '}';
     }
-
 
 }

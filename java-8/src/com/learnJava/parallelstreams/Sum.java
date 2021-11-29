@@ -12,10 +12,8 @@ public class Sum {
         this.total = total;
     }
 
-    public void performSum(int input){
-        total+=input;
+    public void performSum(int input) {
+        total += input;
         //System.out.println("total: " + total);
-
     }
-
 }

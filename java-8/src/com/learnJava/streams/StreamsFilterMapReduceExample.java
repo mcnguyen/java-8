@@ -16,7 +16,6 @@ public class StreamsFilterMapReduceExample {
     });
 
     private static int noOfNoteBooks(){
-
         int totalNoOfnoteBooks = StudentDataBase.getAllStudents().stream()
                 //.filter(genderPredicte)
                 .filter(gradeLevel)
@@ -33,7 +32,6 @@ public class StreamsFilterMapReduceExample {
 
     }
     public static void main(String[] args) {
-
         System.out.println("Total No of NoteBooks are : " + noOfNoteBooks());
     }
 }

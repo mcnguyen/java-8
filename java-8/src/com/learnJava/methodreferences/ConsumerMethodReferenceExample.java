@@ -10,7 +10,8 @@ public class ConsumerMethodReferenceExample {
     /**
      * Class::instancemethod
      */
-    static Consumer<Student>  c1= System.out::println;
+    static Consumer<Student> c0 = p -> System.out.println(p);
+    static Consumer<Student> c1= System.out::println;
 
 
     /**
@@ -20,9 +21,13 @@ public class ConsumerMethodReferenceExample {
     static Consumer<Student> c3 = (Student::printListOfActivities);
 
     public static void main(String[] args) {
-
+        StudentDataBase.getAllStudents().forEach(c0);
+        System.out.println();
         StudentDataBase.getAllStudents().forEach(c1);
+        System.out.println();
+
         StudentDataBase.getAllStudents().forEach(c2);
+        System.out.println();
         StudentDataBase.getAllStudents().forEach(c3);
     }
 

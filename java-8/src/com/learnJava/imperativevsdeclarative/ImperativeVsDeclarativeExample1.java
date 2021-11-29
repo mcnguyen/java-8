@@ -11,12 +11,12 @@ public class ImperativeVsDeclarativeExample1 {
         /**
          * Imperative Style - how style of programming
          */
-        int sum=0;
-        for(int i=0;i<=100;i++){
-                sum+=i; // shared mutable state and its sequential anf it will go step by step
-                    // and it will have issues if we try to run the code in multithreaded environment
+        int sum = 0;
+        for (int i = 0; i <= 100; i++) {
+            sum += i; // shared mutable state and its sequential anf it will go step by step
+            // and it will have issues if we try to run the code in multithreaded environment
         }
-        System.out.println("Sum is : "+sum);
+        System.out.println("Sum is : " + sum);
 
 
         /**
@@ -24,7 +24,10 @@ public class ImperativeVsDeclarativeExample1 {
          * what style of programming.
          * You let the system do the job for you and get the result.
          */
-        int sum1= IntStream.rangeClosed(0,100)
+        int sum2 = IntStream.rangeClosed(0, 100).sum();
+        System.out.println("sum2 : " + sum2);
+
+        int sum1 = IntStream.rangeClosed(0, 100)
                 //.parallel()
                 .map(Integer::new)
                 .sum();

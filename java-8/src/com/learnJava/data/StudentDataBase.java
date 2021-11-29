@@ -12,21 +12,18 @@ public class StudentDataBase {
     };
 
     public static Optional<Student> getOptionalStudent(){
-
         Student student = new Student("Adam",2,4.0,"male", Arrays.asList("swimming", "basketball","volleyball"));
 
-        Bike bike = new Bike("Client123", "Client123");
+        Bike bike = new Bike("Client123Name", "Client123Model");
         student.setBike(Optional.of(bike));
         return Optional.of(student);
     }
-
 
     /**
      * Total of 6 students in the database.
      * @return
      */
     public static List<Student> getAllStudents(){
-
         /**
          * 2nd grade students
          */
@@ -43,6 +40,7 @@ public class StudentDataBase {
         Student student5 = new Student("Sophia",4,3.5,"female",10, Arrays.asList("swimming", "dancing","football"));
         Student student6 = new Student("James",4,3.9,"male", 22,Arrays.asList("swimming", "basketball","baseball","football"));
 
+//        List<Student> students = Arrays.asList(student1,student2,student3,student4,student5,student6,null);
         List<Student> students = Arrays.asList(student1,student2,student3,student4,student5,student6);
         return students;
     }

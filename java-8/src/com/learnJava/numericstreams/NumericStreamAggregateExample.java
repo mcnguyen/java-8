@@ -11,8 +11,6 @@ import java.util.stream.LongStream;
 public class NumericStreamAggregateExample {
 
     public static void main(String[] args) {
-
-
         int sum = IntStream.rangeClosed(1,50).sum();
         System.out.println("Sum : "+ sum);
 
@@ -26,5 +24,8 @@ public class NumericStreamAggregateExample {
         OptionalDouble avg = IntStream.rangeClosed(1,50).average();
         System.out.println(avg.getAsDouble());
 
+        OptionalInt optInt = IntStream.rangeClosed(5,5).max();
+        System.out.println(optInt.orElse(0));
+        System.out.println(optInt.isPresent() ? optInt : 0);
     }
 }

@@ -14,24 +14,22 @@ public class LambdaExceptionHandlingExample {
         try{
             System.out.println(s.getName().toUpperCase());
         }catch (Exception e){
-            System.err.println("Exception is studentConsumer : " + e);
+            System.err.println("Exception in studentConsumer : " + e);
         }
 
     };
 
     static Consumer<Student> printNameInUpperCase(Consumer<Student> consumer){
-
         return name -> {
             try{
                 consumer.accept(name);
             }catch (Exception e){
-                System.err.println("Exception is printNameInUpperCase : " + e);
+                System.err.println("Exception in printNameInUpperCase : " + e);
             }
         };
     }
 
     public static void main(String[] args) {
-
         List<Student> studentList= new ArrayList<>();
         studentList.add(new Student());
         studentList.forEach(studentConsumer);
